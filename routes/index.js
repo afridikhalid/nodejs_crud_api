@@ -7,11 +7,4 @@ var controller = require('../controllers/main_controller');
 router.get ('/', controller.index);
 
 
-/* Get home page. */
-/*
-router.get('/', function(req, res) {
-    res.render('index', {title: "Cars"});
-});
-*/
-
 module.exports = router;

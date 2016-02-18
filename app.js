@@ -4,6 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
+require('./api/models/db');
 
 
 
@@ -72,5 +73,5 @@ app.use(function(err, req, res, next) {
 
 
 app.listen(app.get('port'), function() {
-    console.log('Server up: htt://localhost:' + app.get('port'));
+    console.log('Server Listening on => : htt://localhost:' + app.get('port'));
 });
