@@ -9,6 +9,7 @@ require('./api/models/db');
 
 
 var routes = require('./routes/index');
+var api_routes = require('./api/routes/index');
 
 
 var app = express();
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
+app.use('/api', api_routes);
 
 
 

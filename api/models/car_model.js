@@ -1,8 +1,12 @@
 var mongoose = require('mongoose');
 
 
-/* Car model Schema */
-/* the schema is simple and flat just now but can be extendend easily to nested shemas */
+/* 
+ =====================================================================================
+ *  Car model Schema
+ *  the schema is simple and flat just now but can be extendend easily to nested shemas
+ =====================================================================================
+*/
 
 var carSchema = new mongoose.Schema({
     make: {type: String, required: true},
@@ -19,10 +23,12 @@ var carSchema = new mongoose.Schema({
     generalInfo: {type: String, required: true},
     postedOn: {type: Date, "default": Date.now}
     /*
+    ===================================================================================
     * This could be with much more details about the vehicle but for this simple 
     * api it's enough i think. to prove the point
     * here i have used mangoose validation however we will be having validation in our 
     * controller as well.
+    ====================================================================================
     */
 });
 
