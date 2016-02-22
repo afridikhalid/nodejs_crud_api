@@ -11,17 +11,17 @@ var mongoose = require('mongoose');
 var carSchema = new mongoose.Schema({
     make: {type: String, required: true},
     model: {type: String, required: true},
-    completeName: {type: String, require: true},
+    completename: {type: String, require: true},
     year : {type: Number, required: true},
     color: {type: String, required: true},
     condition: {type: String, required: true},
-    gearBox: {type: String, required: true},
+    gearbox: {type: String, required: true},
     fuel: {type: String, required: true},
     price: {type: Number, required: true},
     mileage: {type: Number, required: true},
-    vehicleType: {type: String, required: true},
-    generalInfo: {type: String, required: true},
-    postedOn: {type: Date, "default": Date.now}
+    vehicletype: {type: String, required: true},
+    generalinfo: {type: String, required: true},
+    postedon: {type: Date, "default": Date.now}
     /*
     ===================================================================================
     * This could be with much more details about the vehicle but for this simple 

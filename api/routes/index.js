@@ -12,7 +12,4 @@ router.get('/cars/:carid', car_get_ctrl.getCarbyId);
 
 
 
-
-
-
 module.exports = router;

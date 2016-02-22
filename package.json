@@ -1,6 +1,6 @@
 {
     "name": "nodejs_crud_api",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "a simple api with the functionality of crud. it will be using mongodb for the database",
     "main": "index.js",
     "scripts": {
