@@ -30,6 +30,9 @@ var carSchema = new mongoose.Schema({
     * controller as well.
     ====================================================================================
     */
+}, {
+    // here i have disable the version which is on by default while using mongoose.
+    versionKey: false
 });
 
 mongoose.model('Car', carSchema);
