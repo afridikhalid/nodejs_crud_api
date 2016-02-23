@@ -27,7 +27,7 @@ module.exports.createCar = function(req, res) {
         car_mod.create({
             make: body.make.trim(),
             model: body.model.trim(),
-            completename: body.make.trim() + ' ' + body.model.trim(),
+            fullname: body.make.trim() + ' ' + body.model.trim(),
             year: parseInt(body.year),
             color: body.color.trim(),
             condition: body.condition.trim(),

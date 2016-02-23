@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 var carSchema = new mongoose.Schema({
     make: {type: String, required: true},
     model: {type: String, required: true},
-    completename: {type: String, require: true},
+    fullname: {type: String, require: true},
     year : {type: Number, required: true},
     color: {type: String, required: true},
     condition: {type: String, required: true},
