@@ -2,7 +2,8 @@ var express = require('express'),
     router = express.Router(),
     car_get_ctrl = require('../controllers/car_get_controller'),
     car_post_ctrl = require('../controllers/car_post_controller'),
-    car_update_ctrl = require('../controllers/car_update_controller');
+    car_update_ctrl = require('../controllers/car_update_controller'),
+    car_delete_ctrl = require('../controllers/car_delete_controller');
 
 /*
   =====================================================================================
@@ -26,6 +27,11 @@ router.post('/cars', car_post_ctrl.createCar);
 router.put('/cars/:carid', car_update_ctrl.updateCar);
 // this route is only in case if the params is empty
 router.put('/cars', car_update_ctrl.paramlessupdate);
-
-
+/*
+  =====================================================================================
+  * delete a car route
+  =====================================================================================
+*/
+router.delete('/cars/:carid', car_delete_ctrl.deleteCar);
+router.delete('/cars', car_delete_ctrl.paramlessdelete);
 module.exports = router;
