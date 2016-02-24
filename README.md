@@ -19,7 +19,7 @@ That's all. the server will be up and listening
 
 I have used **Postman* so you can do all the CRUD commands.
 
-**Fetch all*  
+**Fetch all**  
 The route for the `Get` should be `htt://localhost:3000/cars`  
 
 **Fetch by Id*  
