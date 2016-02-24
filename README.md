@@ -17,16 +17,16 @@ That's all. the server will be up and listening
 
 ##How to interact with the API
 
-I have used **Postman* so you can do all the CRUD commands.
+I have used **Postman** so you can do all the CRUD commands.
 
 **Fetch all**  
 The route for the `Get` should be `htt://localhost:3000/cars`  
 
-**Fetch by Id*  
+**Fetch by Id**  
 The route for the `Get` should be `htt://localhost:3000/cars/carid`
 
 
-**Post a Car*  
+**Post a Car**  
 The route for the `Post` should be `htt://localhost:3000/cars`   
 check the port in your terminal as well to be sure  
 I pretend that you're using `Postman` you have to select `post` for the action then `body` and `raw` and then `json` 
@@ -49,14 +49,14 @@ I pretend that you're using `Postman` you have to select `post` for the action t
 
 ```
 
-**Query fields*  
+**Query fields**  
 
 The following query will display all silver cars.
 if you type a wrong filed name it will just skip it and returns the full list of the cars without query.  
 
 The route for `Get` should be `htt://localhost:3000/cars?color=silver&make=benz`
 
-*What else can be done with the query?
+**What else can be done with the query?**
 
 * `limit=5'
 * `offeset=3`
@@ -68,7 +68,7 @@ The route for `Get` should be `htt://localhost:3000/cars?color=silver&make=benz`
 * `vehicletype=sedan`
 * `condition=used`
 
-**Get specific fields*
+**Get specific fields**
 
 The route for `Get` should be `htt://localhost:3000/cars?colorfield=color&makefield=make`  
 You can get as many fields as you which just by adding the `field` word to the field you want to be displaied.
@@ -85,13 +85,13 @@ You can get as many fields as you which just by adding the `field` word to the f
 * `vehicletypefield=vehicletype`
 * `generalinfofield=generalinfo`
 
-**Delete a car by id* 
+**Delete a car by id** 
 Simple send a delete request with the carid to API and that's all the item has been deleted...  
 The route for `Delete` should be `htt://localhost:3000/cars/carid`
 
 
 
-##LICENCE `MIT`  
+##LICENCE: MIT  
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
