@@ -39,45 +39,45 @@ module.exports.getAllCars = function(req, res) {
       * query and show only the selected fields
       ========================================================================================
     */
-    if (query_params.hasOwnProperty('mkef') && query_params.mkef.toLowerCase() === 'make') {
-        selectFields = query_params.mkef.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('makefield') && query_params.mkef.toLowerCase() === 'make') {
+        selectFields = query_params.makefield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('mdlf') && query_params.mdlf.toLowerCase() === 'model') {
-        selectFields = selectFields + query_params.mdlf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('modelfield') && query_params.mdlf.toLowerCase() === 'model') {
+        selectFields = selectFields + query_params.modelfield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('cpnf') && query_params.cpnf.toLowerCase() === 'completeName') {
-        selectFields = selectFields + query_params.cpnf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('fullnamefield') && query_params.cpnf.toLowerCase() === 'fullname') {
+        selectFields = selectFields + query_params.fullnamefield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('colf') && query_params.colf.toLowerCase() === 'color') {
-        selectFields = selectFields + query_params.colf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('colorfield') && query_params.colf.toLowerCase() === 'color') {
+        selectFields = selectFields + query_params.colorfield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('conf') && query_params.conf.toLowerCase() === 'condition') {
-        selectFields = selectFields + query_params.conf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('conditionfield') && query_params.conf.toLowerCase() === 'condition') {
+        selectFields = selectFields + query_params.conditionfield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('grbf') && query_params.grbf.toLowerCase() === 'gearbox') {
-        selectFields = selectFields + query_params.grbf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('gearboxfield') && query_params.grbf.toLowerCase() === 'gearbox') {
+        selectFields = selectFields + query_params.gearboxfield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('prcf') && query_params.prcf.toLowerCase() === 'price') {
-        selectFields = selectFields + query_params.prcf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('pricefield') && query_params.prcf.toLowerCase() === 'price') {
+        selectFields = selectFields + query_params.pricefield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('milf') && query_params.milf.toLowerCase() === 'mileage') {
-        selectFields = selectFields + query_params.milf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('mileagefield') && query_params.milf.toLowerCase() === 'mileage') {
+        selectFields = selectFields + query_params.mileagefield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('gnif') && query_params.gnif.toLowerCase() === 'generalinfo') {
-        selectFields = selectFields + query_params.gnif.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('generalinfofield') && query_params.gnif.toLowerCase() === 'generalinfo') {
+        selectFields = selectFields + query_params.generalinfo.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('pstf') && query_params.pstf.toLowerCase() === 'postedon') {
-        selectFields = selectFields + query_params.pstf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('postedonfield') && query_params.pstf.toLowerCase() === 'postedon') {
+        selectFields = selectFields + query_params.postedonfield.toLowerCase() + ' ';
     }
-    if (query_params.hasOwnProperty('vtpf') && query_params.vtpf.toLowerCase() === 'vehicletype') {
-        selectFields = selectFields + query_params.vtpf.toLowerCase() + ' ';
+    if (query_params.hasOwnProperty('vehicletypefield') && query_params.vtpf.toLowerCase() === 'vehicletype') {
+        selectFields = selectFields + query_params.vehicletypefield.toLowerCase() + ' ';
     }
     
     /*
       ===========================================================================================
       * query and show all the matches based on the query ex. red will show all red cars if exist
       * here for the search case insensitive i am using regex but in bigger projects it's not
-      * recommended as we can not search based on index or it will be slower 
+      * recommended as we can not search based on index alos it will be slower 
       * I think best choice would be to have 2 fields in the doc so one with lowercase
       ===========================================================================================
     */
@@ -138,7 +138,12 @@ module.exports.getAllCars = function(req, res) {
         if (err) {
             responseWithJson(res, 404, {"messge": err});
         } else {
-            responseWithJson(res, 200, cars);
+            if(_.isEmpty(cars)) {
+                responseWithJson(res, 200, {"message": "Ops sorry no object available based on your query or database is empty"});
+            } else {
+                responseWithJson(res, 200, cars);
+            }
+            
         }
     });
   
